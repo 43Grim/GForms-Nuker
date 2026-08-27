@@ -9,7 +9,7 @@ Built with Python, PySide6, and Requests, and designed to work on Linux & Window
 
 ---
 ## 🎯 How to Use
-### 1. Capture the submission endpoint
+### 1. Get the form link
 1. Open the Google Form.
 2. Press **F12** (or right-click → Inspect) to open Developer Tools.
 3. Go to the **Network** tab.
@@ -19,7 +19,7 @@ Built with Python, PySide6, and Requests, and designed to work on Linux & Window
 7. Click **Validate**.  
    You should see the green message **“Valid submission endpoint.”**
 
-### 2. Extract the entry IDs
+### 2. Extract the entry IDs (the questions)
 1. In the Network tab, click the request named **`formResponse`**.
 2. Open the **Payload** (or **Form Data**) tab.
 3. You will see lines like:
@@ -33,10 +33,7 @@ entry.1122334455: Option B
 5. Repeat until **all** entry IDs from the Payload are added.  
 (Do not skip any required questions or the submissions will fail.)
 
-### 3. Add multiple possible answers (for randomization)
-- For any question that has several options, list them in the **Value** field separated by `|`:
-
-### 3. Add multiple answers (for randomization)
+### 3. Add multiple answers (for randomisation)
 - For questions with several options, list them in the **Value** field separated by `|`:
 I love mangoes | Mangoes love me | Fried Chicken | Giga Nugget
 
