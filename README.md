@@ -1,30 +1,52 @@
 # GForms-Nuker
 A Python application for sending Google Forms submissions through a modern, cross-platform PySide6 GUI.
-# Functionality with forms that require you to be signed in or are limited to one response does not currently work, this is planned in the future!
+Functionality with forms that require you to be signed in or are limited to one response do not currently work, a fix is planned in the future!
 
 ---
 ## 📋 Overview
 This application provides a graphical interface for configuring and sending repeated Google Forms submissions. It supports multiple answer sets, configurable submission speeds, progress tracking, error logging, and automatic configuration saving.
-Built with Python, PySide6, and Requests, and designed to work on Linux, Windows & MacOS.
+Built with Python, PySide6, and Requests, and designed to work on Linux & Windows.
 
 ---
-## 🎯 Features
-- **Google Forms Support** — Enter a formResponse URL or automatically convert a viewform URL
-- **Multiple Answer Sets** — Create, duplicate, and cycle through different sets of responses
-- **Custom Form Fields** — Add as many Google Forms entry.xxxxxxxxx fields as required
-- **Value Randomisation** — Use | to randomly select between multiple values
-- **Configurable Submission Count** — Send up to 5000 submissions per run
-- **Submission Speed Control** — Adjust the delay between submissions or enable maximum speed
-- **Live Progress Tracking** — Monitor current progress, successful submissions, and failures
-- **Error Logging — View HTTP** errors and request failures directly in the application
-- **Start / Stop Controls** — Stop an active submission run without closing the application
-- **Automatic Configuration Saving** — Saves your form URL, answer sets, speed settings, and submission count
+## 🎯 How to Use
+### 1. Capture the submission endpoint
+1. Open the Google Form.
+2. Press **F12** (or right-click → Inspect) to open Developer Tools.
+3. Go to the **Network** tab.
+4. Fill out every required question with any valid answers and click **Submit**.
+5. Stay on the “Your response has been recorded” page.
+6. Copy the **entire URL** from the address bar and paste it into the **Google Form** field in the tool.
+7. Click **Validate**.  
+   You should see the green message **“Valid submission endpoint.”**
 
----
-## 🛠️ Built With
-Python
-PySide6
-Requests
+### 2. Extract the entry IDs
+1. In the Network tab, click the request named **`formResponse`**.
+2. Open the **Payload** (or **Form Data**) tab.
+3. You will see lines like:
+entry.1394937983: I love mangoes
+entry.XXXXXXXXX: some other answer
+4. For each `entry.XXXXXXXXX`:
+- Copy the full `entry.XXXXXXXXX` into the **Form Field** box of Answer Set 1.
+- Put the corresponding answer in the **Value** box.
+
+### 3. Add multiple answers (for randomization)
+- For questions with several options, list them in the **Value** field separated by `|`:
+I love mangoes | Mangoes love me | Fried Chicken | Giga Nugget
+
+- The tool will randomly choose one value for each submission.
+- Click **+ Add Answer Set** if you need different combinations of answers.
+
+### 4. Configure and run
+1. Set the **Total submissions to send**.
+2. Choose a **Submission Speed** (or leave on “No delay”).
+3. Click **START**.
+4. Monitor the Progress bar and Success / Failed counters.
+5. Click **STOP** if you need to halt early.
+
+### Troubleshooting
+| “Valid submission endpoint” never appears | You copied a viewform URL instead of the formResponse URL. Re-submit the form and copy the new URL. |
+| Submissions fail | Make sure every required entry is present and the values match the expected format. |
+| Too many failures | Slow down the submission speed or reduce the total number of submissions. |
 
 ---
 ## ❗ Notice
