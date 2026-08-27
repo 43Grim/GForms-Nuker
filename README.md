@@ -25,7 +25,7 @@ PySide6
 Requests
 
 ---
-##❗ Notice
+❗ Notice
 This project is intended for educational purposes, testing forms you own or are authorised to test, and development use.
 Do not use this application to spam, disrupt, or abuse third-party services.
 Parts of this code repository were generated or assisted using artificial intelligence tools. Some functions, scripts, documentation, and development decisions were created with assistance from AI models.
