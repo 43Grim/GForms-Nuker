@@ -1,6 +1,8 @@
 # GForms-Nuker
 A Python application for sending Google Forms submissions through a modern, cross-platform PySide6 GUI.
+# Functionality with forms that require you to be signed in or are limited to one response does not currently work, this is planned in the future!
 
+---
 ## 📋 Overview
 This application provides a graphical interface for configuring and sending repeated Google Forms submissions. It supports multiple answer sets, configurable submission speeds, progress tracking, error logging, and automatic configuration saving.
 Built with Python, PySide6, and Requests, and designed to work on Linux, Windows & MacOS.
@@ -25,7 +27,7 @@ PySide6
 Requests
 
 ---
-## ❗ Noticed
+## ❗ Notice
 This project is intended for educational purposes, testing forms you own or are authorised to test, and development use.
 Do not use this application to spam, disrupt, or abuse third-party services.
 Parts of this code repository were generated or assisted using artificial intelligence tools. Some functions, scripts, documentation, and development decisions were created with assistance from AI models.
