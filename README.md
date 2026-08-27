@@ -24,10 +24,17 @@ Built with Python, PySide6, and Requests, and designed to work on Linux & Window
 2. Open the **Payload** (or **Form Data**) tab.
 3. You will see lines like:
 entry.1394937983: I love mangoes
-entry.XXXXXXXXX: some other answer
-4. For each `entry.XXXXXXXXX`:
-- Copy the full `entry.XXXXXXXXX` into the **Form Field** box of Answer Set 1.
-- Put the corresponding answer in the **Value** box.
+entry.9876543210: Yes
+entry.1122334455: Option B
+4. **For every `entry.XXXXXXXXX` you see:**
+- Click **+ Add Field** inside Answer Set 1 (or use the existing empty field).
+- Paste the full `entry.XXXXXXXXX` into the **Form Field** box.
+- Paste the answer you submitted into the **Value** box next to it.
+5. Repeat until **all** entry IDs from the Payload are added.  
+(Do not skip any required questions or the submissions will fail.)
+
+### 3. Add multiple possible answers (for randomization)
+- For any question that has several options, list them in the **Value** field separated by `|`:
 
 ### 3. Add multiple answers (for randomization)
 - For questions with several options, list them in the **Value** field separated by `|`:
