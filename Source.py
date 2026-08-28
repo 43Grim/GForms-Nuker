@@ -247,7 +247,7 @@ class SubmissionEntry(QFrame):
 
         self.add_field_button = QPushButton("+ Add Field")
         self.layout.addWidget(self.add_field_button)
-        self.add_field_button.clicked.connect(self.add_field)
+        self.add_field_button.clicked.connect(lambda: self.add_field())
         self.add_field()
 
     def add_field(self, field="", value=""):
