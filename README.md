@@ -1,4 +1,4 @@
-# GForms-Nuker
+# GForms-Nuker (DOES NOT WORK WHEN THERE IS A REQUIRED QUESTION HELP ME)
 A Python application for sending Google Forms submissions through a modern, cross-platform PySide6 GUI.
 Functionality with forms that require you to be signed in or are limited to one response do not currently work, a fix is planned in the future!
 
